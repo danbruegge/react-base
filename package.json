@@ -10,7 +10,7 @@
     "build": "webpack -p --env.production",
     "dev": "webpack-dev-server --env.development",
     "test": "jest",
-    "tdd": "yarn test -- --watch",
+    "tdd": "yarn test --watch",
     "start": "yarn dev"
   },
   "browserslist": [

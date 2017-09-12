@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
-import { Title, Message } from 'app/components/core';
+import { App } from 'app/components/core';
 
 /* eslint-disable no-underscore-dangle */
 const reduxDevtools = (
@@ -16,10 +16,7 @@ const store = createStore(() => {}, reduxDevtools);
 
 ReactDOM.render(
     <Provider store={store}>
-        <div>
-            <Title>Hello World</Title>
-            <Message>This is a hello world message.</Message>
-        </div>
+        <App />
     </Provider>,
     document.getElementById('Root'),
 );

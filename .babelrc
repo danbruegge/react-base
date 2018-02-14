@@ -9,6 +9,5 @@
         "transform-object-rest-spread",
         "transform-export-extensions",
         "transform-class-properties",
-        [ "transform-runtime", { "polyfill": false, "regenerator": true, }, ]
     ]
 }

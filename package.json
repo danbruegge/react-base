@@ -16,9 +16,6 @@
   "browserslist": [
     "last 1 versions"
   ],
-  "jest": {
-    "collectCoverage": true
-  },
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.0",

@@ -5,8 +5,8 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 export default (env) => {
     const isProduction = !!env.production;
-    const publicPath = resolvePath('public/');
-    const exclude = /(node_modules|public|__tests__)/;
+    const distribution = resolvePath('dist/');
+    const exclude = /(node_modules|dist|__tests__)/;
 
     const htmlSinglePage = new HtmlWebpackPlugin({
         filename: 'index.html',
@@ -47,7 +47,7 @@ export default (env) => {
         },
         output: {
             filename: '[name].js',
-            path: publicPath,
+            path: distribution,
             publicPath: '/',
         },
         plugins: [
@@ -58,7 +58,7 @@ export default (env) => {
             htmlSinglePage,
         ],
         devServer: {
-            contentBase: publicPath,
+            contentBase: distribution,
             host: '0.0.0.0',
             port: 9000,
             stats: 'minimal',

@@ -1,13 +1,8 @@
 {
     "presets": [ "env", "react" ],
     "plugins": [
-        ["babel-plugin-module-resolver", {
-            "alias": {
-                "app": "./src"
-            }
-        }],
-        "transform-object-rest-spread",
-        "transform-export-extensions",
-        "transform-class-properties",
+        ["babel-plugin-module-resolver", { "alias": { "app": "./src" } }],
+        ["transform-object-rest-spread", { "useBuiltIns": true }],
+        "transform-class-properties"
     ]
 }

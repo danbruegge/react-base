@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Title, Message } from 'app/components/core';
+import { Title, Message } from 'components/core';
 
 const HelloWorld = () => (
     <div>

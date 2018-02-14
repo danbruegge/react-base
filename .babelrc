@@ -1,7 +1,7 @@
 {
     "presets": [ "env", "react" ],
     "plugins": [
-        ["babel-plugin-module-resolver", { "alias": { "app": "./src" } }],
+        ["babel-plugin-module-resolver", { "root": [ "./src" ] }],
         ["transform-object-rest-spread", { "useBuiltIns": true }],
         "transform-class-properties"
     ]

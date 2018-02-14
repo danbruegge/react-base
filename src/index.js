@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
-import { App } from 'app/components/core';
+import { App } from 'components/core';
 
 /* eslint-disable no-underscore-dangle */
 const reduxDevtools = (

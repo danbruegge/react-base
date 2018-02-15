@@ -1,4 +1,3 @@
-import React from 'react';
 import { injectGlobal } from 'styled-components';
 
 import HelloWorld from './HelloWorld';
@@ -10,4 +9,4 @@ injectGlobal`
     }
 `;
 
-export default () => <HelloWorld />;
+export default HelloWorld;

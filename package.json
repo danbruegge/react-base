@@ -14,7 +14,7 @@
     "start": "yarn dev"
   },
   "browserslist": [
-    "last 1 versions"
+    "last 2 versions"
   ],
   "dependencies": {
     "babel-core": "^6.26.0",

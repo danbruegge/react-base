@@ -25,7 +25,7 @@ export default (env) => {
             : 'cheap-module-eval-source-map',
         resolve: { extensions: ['.js', '.jsx'] },
         context: resolvePath('src'),
-        entry: './index.js',
+        entry: './index.jsx',
         module: {
             rules: [
                 {

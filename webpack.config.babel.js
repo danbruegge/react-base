@@ -2,27 +2,13 @@ import path from 'path';
 import webpack from 'webpack';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 export default (env) => {
     const isProduction = !!env.production;
-    const distribution = resolvePath('dist/');
-    const exclude = /(node_modules|dist|__tests__)/;
-
-    const htmlSinglePage = new HtmlWebpackPlugin({
-        filename: 'index.html',
-        template: resolvePath('src/index.html'),
-        hash: true,
-    });
-
-    const eslintRules = !isProduction ? {} : {
-        'no-console': [2, { allow: ['warn', 'error'] }],
-    };
+    const distribution = resolvePath('dist');
 
     return {
-        devtool: isProduction
-            ? 'hidden-source-map'
-            : 'cheap-module-eval-source-map',
+        devtool: getDevtool(isProduction),
         resolve: { extensions: ['.js', '.jsx'] },
         context: resolvePath('src'),
         entry: './index.jsx',
@@ -31,16 +17,16 @@ export default (env) => {
                 {
                     enforce: 'pre',
                     test: /\.(js|jsx)$/,
-                    exclude,
+                    exclude: /(node_modules|dist)/,
                     loader: 'eslint-loader',
                     options: {
                         fix: true,
                         failOnError: isProduction,
-                        rules: eslintRules,
+                        rules: getEslintRules(isProduction),
                     },
                 },
                 {
-                    exclude,
+                    exclude: /(node_modules|dist)/,
                     test: /\.(js|jsx)$/,
                     use: 'babel-loader',
                 },
@@ -56,10 +42,8 @@ export default (env) => {
                 IS_PRODUCTION: JSON.stringify(isProduction),
             }),
             new webpack.optimize.ModuleConcatenationPlugin(),
-            new StyleLintPlugin({
-                files: ['**/*.js*'],
-            }),
-            htmlSinglePage,
+            new StyleLintPlugin({ files: ['**/*.js*'] }),
+            htmlSinglePage(resolvePath('src/index.html')),
         ],
         devServer: {
             contentBase: distribution,
@@ -69,8 +53,22 @@ export default (env) => {
             historyApiFallback: true,
         },
     };
-
-    function resolvePath(toResolve) {
-        return path.resolve(__dirname, toResolve);
-    }
 };
+
+const resolvePath = toResolve => path.resolve(__dirname, toResolve);
+
+const getDevtool = isProduction => (
+    isProduction ? 'hidden-source-map' : 'cheap-module-eval-source-map'
+);
+
+const getEslintRules = isProduction => ({
+    'no-console': isProduction
+        ? [2, { allow: ['warn', 'error'] }]
+        : 0,
+});
+
+const htmlSinglePage = template => new HtmlWebpackPlugin({
+    filename: 'index.html',
+    template,
+    hash: true,
+});

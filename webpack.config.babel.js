@@ -1,5 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
+import StyleLintPlugin from 'stylelint-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
@@ -55,6 +56,9 @@ export default (env) => {
                 IS_PRODUCTION: JSON.stringify(isProduction),
             }),
             new webpack.optimize.ModuleConcatenationPlugin(),
+            new StyleLintPlugin({
+                files: ['**/*.js*'],
+            }),
             htmlSinglePage,
         ],
         devServer: {

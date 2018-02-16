@@ -1,21 +1,20 @@
 {
     "extends": [
         "airbnb",
-        "plugin:jest/recommended"
+        "plugin:jest/recommended",
+        "prettier",
+        "prettier/react"
     ],
     "parser": "babel-eslint",
     "env": {
         "browser": 1,
         "jest": 1
     },
-    "plugins": ["jest"],
+    "plugins": ["prettier", "jest", "json"],
     "rules": {
-        "indent": [ "error", 4, { "SwitchCase": 1 } ],
         "import/no-extraneous-dependencies": 0,
         "import/no-unresolved": 0,
         "import/extensions": 0,
-        "react/jsx-indent": ["error", 4],
-        "react/jsx-indent-props": ["error", 4],
         "no-unused-expressions": ["error", {
             "allowShortCircuit": false,
             "allowTernary": false,

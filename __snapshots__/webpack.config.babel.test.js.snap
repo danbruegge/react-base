@@ -20,7 +20,6 @@ Object {
         "loader": "eslint-loader",
         "options": Object {
           "failOnError": false,
-          "fix": true,
           "rules": Object {
             "no-console": 0,
           },
@@ -98,7 +97,6 @@ Object {
         "loader": "eslint-loader",
         "options": Object {
           "failOnError": true,
-          "fix": true,
           "rules": Object {
             "no-console": Array [
               2,

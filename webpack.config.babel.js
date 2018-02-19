@@ -1,9 +1,10 @@
+// @flow
 import path from 'path';
 import webpack from 'webpack';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
-export default env => {
+export default (env: { production?: string }) => {
     const isProduction = !!env.production;
     const distribution = resolvePath('dist');
 

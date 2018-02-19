@@ -1,8 +1,9 @@
+// @flow
 import webpackConfig from './webpack.config.babel';
 
 jest.mock('path', () => ({
     resolve: (...args) => args[1],
-    join: (...args) => args[1],
+    join: (...args) => args[1]
 }));
 
 test('Should match snapshot for development', () => {

@@ -1,13 +1,14 @@
 React-Base
 ==========
-Basic babel, eslint, webpack, react and redux setup
-
+Basic react and redux setup with babel, eslint, prettier, flow and webpack.
 
 Commands
 --------
 + `install`         - install all packages
 + `build`           - build project for production
 + `test` or `tdd`   - run tests
++ `typecheck`       - run flow to typecheck files
++ `lint`            - run eslint on all js, jsx and json files with fix option
 + `dev`             - run development server
 + `start`           - run development environment
 

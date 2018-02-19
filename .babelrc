@@ -1,5 +1,5 @@
 {
-    "presets": [ "env", "react" ],
+    "presets": [ "env", "react", "flow" ],
     "plugins": [
         ["babel-plugin-module-resolver", { "root": [ "./src" ] }],
         ["transform-object-rest-spread", { "useBuiltIns": true }],

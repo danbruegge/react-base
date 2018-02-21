@@ -2,9 +2,9 @@
 
 exports[`Should match snapshot for development 1`] = `
 Object {
-  "context": "src",
+  "context": "../src",
   "devServer": Object {
-    "contentBase": "dist",
+    "contentBase": "../dist",
     "historyApiFallback": true,
     "host": "0.0.0.0",
     "port": 9000,
@@ -35,7 +35,7 @@ Object {
   },
   "output": Object {
     "filename": "[name].js",
-    "path": "dist",
+    "path": "../dist",
     "publicPath": "/",
   },
   "plugins": Array [
@@ -62,7 +62,7 @@ Object {
         "inject": true,
         "minify": false,
         "showErrors": true,
-        "template": "src/index.html",
+        "template": "../src/index.html",
         "title": "Webpack App",
         "xhtml": false,
       },
@@ -79,9 +79,9 @@ Object {
 
 exports[`Should match snapshot for production 1`] = `
 Object {
-  "context": "src",
+  "context": "../src",
   "devServer": Object {
-    "contentBase": "dist",
+    "contentBase": "../dist",
     "historyApiFallback": true,
     "host": "0.0.0.0",
     "port": 9000,
@@ -120,7 +120,7 @@ Object {
   },
   "output": Object {
     "filename": "[name].js",
-    "path": "dist",
+    "path": "../dist",
     "publicPath": "/",
   },
   "plugins": Array [
@@ -147,7 +147,7 @@ Object {
         "inject": true,
         "minify": false,
         "showErrors": true,
-        "template": "src/index.html",
+        "template": "../src/index.html",
         "title": "Webpack App",
         "xhtml": false,
       },

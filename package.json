@@ -15,7 +15,9 @@
         "lint": "eslint --ext .js,.jsx,.json --fix .",
         "start": "yarn dev"
     },
-    "browserslist": ["last 2 versions"],
+    "browserslist": [
+        "last 2 versions"
+    ],
     "dependencies": {
         "babel-core": "^6.26.0",
         "babel-eslint": "^8.0.0",

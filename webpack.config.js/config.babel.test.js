@@ -1,10 +1,14 @@
 // @flow
-import webpackConfig from './webpack.config.babel';
+import webpackConfig from './config.babel';
 
-jest.mock('path', () => ({
-    resolve: (...args) => args[1],
-    join: (...args) => args[1]
-}));
+jest.mock('path', () => {
+    const joinPath = (...args) => args.splice(1).join('');
+
+    return {
+        resolve: joinPath,
+        join: joinPath
+    };
+});
 
 test('Should match snapshot for development', () => {
     const env = { development: 'development' };

@@ -55,7 +55,7 @@ export default (env: { production?: string }) => {
     };
 };
 
-const resolvePath = toResolve => path.resolve(__dirname, toResolve);
+const resolvePath = toResolve => path.resolve(__dirname, '../', toResolve);
 
 const getDevtool = isProduction =>
     isProduction ? 'hidden-source-map' : 'cheap-module-eval-source-map';

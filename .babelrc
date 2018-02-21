@@ -1,9 +1,12 @@
 {
-    "presets": [ "env", "react", "flow" ],
+    "presets": [["env", { "modules": false }], "react", "flow"],
     "plugins": [
-        ["babel-plugin-module-resolver", { "root": [ "./src" ] }],
+        ["babel-plugin-module-resolver", { "root": ["./src"] }],
         ["transform-object-rest-spread", { "useBuiltIns": true }],
         "transform-class-properties",
         "babel-plugin-styled-components"
-    ]
+    ],
+    "env": {
+        "test": { "plugins": ["transform-es2015-modules-commonjs"] }
+    }
 }

@@ -11,7 +11,7 @@
         "dev": "webpack-dev-server --env.development",
         "test": "jest",
         "tdd": "yarn test --watch",
-        "typecheck": "yarn flow check",
+        "typecheck": "flow check",
         "lint": "eslint --ext .js,.jsx,.json --fix .",
         "start": "yarn dev"
     },
